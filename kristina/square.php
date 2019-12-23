@@ -11,11 +11,15 @@ class Square extends Line implements EquationInterface{
 	
 	public function solve($a, $b, $c) {
 		if ($a==0){
-			return $this->lineRoots;
+			$this->x = array($this->lineRoots($b, $c));
+		return $this->x[0];
 		}
+	
+    MyLog::log("Entered equation is square");
+	
 		$disc = $this->discriminant($a, $b, $c);
 		if ($disc<0){
-			return false;
+			throw new MyException("This equation has no roots");
 		}
 		if ($disc>0) {
 			$x1 = (-$b+sqrt($disc))/(2*$a);

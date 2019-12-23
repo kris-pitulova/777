@@ -7,8 +7,9 @@ class Line {
 	}
 	public function lineRoots($a, $b) {
 		if ($a==0){
-			return false;
+			throw new MyException("This is not an equation \n");
 		}
+	MyLog::log("Linear equation is entered");
 		$this->x[] = -$b/$a;
 		return $this->x;
 	}
