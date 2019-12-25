@@ -1,11 +1,13 @@
 <?php
-include "core/logabstract.php";
-include "core/loginterface.php";
-include "core/equationinterface.php";
-include "kristina/MyException.php";
-include "kristina/mylog.php";
-include "kristina/line.php";
-include "kristina/square.php";
+define('BASEURI', __DIR__);
+echo BASEURI;
+include BASEURI . "/core/logabstract.php";
+include BASEURI . "/core/loginterface.php";
+include BASEURI . "/core/equationinterface.php";
+include BASEURI . "/kristina/MyException.php";
+include BASEURI . "/kristina/mylog.php";
+include BASEURI . "/kristina/line.php";
+include BASEURI . "/kristina/square.php";
 
 
 use kristina\MyLog;
@@ -13,6 +15,7 @@ use kristina\Square;
 use kristina\Line;
 use kristina\MyException;
 
+MyLog::log("Current version: " . file_get_contents("version"));
 echo "Enter koef a, b, c \n";
 for($i = 0; $i < 3; $i ++) {
 	fscanf(STDIN, "%d\n", $number);
