@@ -1,44 +1,50 @@
 <?php
-define('BASEURI', __DIR__);
-echo BASEURI;
-include BASEURI . "/core/logabstract.php";
-include BASEURI . "/core/loginterface.php";
-include BASEURI . "/core/equationinterface.php";
-include BASEURI . "/kristina/MyException.php";
-include BASEURI . "/kristina/mylog.php";
-include BASEURI . "/kristina/line.php";
-include BASEURI . "/kristina/square.php";
+define("BASEURI", __DIR__);
+date_default_timezone_set("Europe/Moscow");
+
+include BASEURI . "/core/LogAbstract.php";
+include BASEURI . "/core/LogInterface.php";
+include BASEURI . "/core/EquationInterface.php";
+include BASEURI . "/Dadi/MyException.php";
+include BASEURI . "/Dadi/Log.php";
+include BASEURI . "/Dadi/Linear.php";
+include BASEURI . "/Dadi/Square.php";
+
+use Dadi\Log;
+use Dadi\Square;
+use Dadi\Linear;
+use Dadi\MyException;
 
 
-use kristina\MyLog;
-use kristina\Square;
-use kristina\Line;
-use kristina\MyException;
+$version = trim(shell_exec('git symbolic-ref --short -q HEAD'));
+Log::log('Current version: ' . $version);
 
-MyLog::log("Current version: " . file_get_contents("version"));
-echo "Enter koef a, b, c \n";
+echo "Enter koefs a, b, c \n";
+
 for($i = 0; $i < 3; $i ++) {
-	fscanf(STDIN, "%d\n", $number);
-	$kfArray[$i] =  $number;
+	$kfArray[$i] =  (float)readline();
 }
+
 $a = $kfArray[0];
 $b = $kfArray[1];
 $c = $kfArray[2];
+
 $eq = $a . "x^2 + " . $b . "x + " . $c . " = 0";
-MyLog::log("Entered equation: " . $eq);
+Log::log("Entered equation: " . $eq);
+
 try {
 	$equation = new Square();
 	$roots = $equation->solve($a, $b, $c);
-	
+
 	if(count($roots) == 2) {
-		MyLog::log("This equation has 2 roots: " . $roots[0] . ", " . $roots[1] . "\n");
+		Log::log("This equation has 2 roots: " . $roots[0] . ", " . $roots[1] . "\n");
 	} elseif(count($roots) == 1) {
-		MyLog::log("Equation root " . $roots[0] . "\n");
+		Log::log("Equation root " . $roots[0] . "\n");
 	}
-	
+
 } catch(MyException $ex) {
-	MyLog::log($ex->getMessage() . "\n");
+	Log::log($ex->getMessage() . "\n");
 }
-MyLog::write();
+Log::write();
 
 ?>

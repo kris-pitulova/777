@@ -1,0 +1,45 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "da055d1e090ae065056898bccb0708f4",
+    "packages": [
+        {
+            "name": "Dadi",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/daDnl/MyLib.git",
+                "reference": "cee1f59e76277cd8b8c682a6a8dbed78de88d015"
+            },
+            "require": {
+                "core": "1.0"
+            },
+            "type": "package",
+            "time": "2020-04-14T13:47:57+00:00"
+        },
+        {
+            "name": "core",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rok9ru/trpo-core.git",
+                "reference": "master"
+            },
+            "type": "library"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "dadi": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

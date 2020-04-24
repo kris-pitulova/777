@@ -1,0 +1,27 @@
+{
+  "name": "trpo",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/daDnl/MyLib.git"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "core",
+        "version": "1.0",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/rok9ru/trpo-core.git",
+          "reference": "master"
+        }
+      }
+    }
+  ],
+  "require": {
+    "Dadi": "@dev"
+  },
+  "config": {
+    "vendor-dir": "D:\\trpo\\project\\trpo"
+  }
+}
