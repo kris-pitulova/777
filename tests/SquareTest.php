@@ -2,13 +2,13 @@
 namespace Dadi;
 
 use PHPUnit\Framework\TestCase;
-/*include __DIR__ . "/../core/LogAbstract.php";
-include __DIR__ . "/../core/LogInterface.php";
-include __DIR__ . "/../core/EquationInterface.php";
-include __DIR__ . "/../Dadi/MyException.php";
-include __DIR__ . "/../Dadi/Log.php";
-include __DIR__ . "/../Dadi/Linear.php";*/
-include __DIR__ . "/../Dadi/Square.php";
+/*include __DIR__ . "/../core/logabstract.php";
+include __DIR__ . "/../core/loginterface.php";
+include __DIR__ . "/../core/equationinterface.php";
+include __DIR__ . "/../kristina/myexception.php";
+include __DIR__ . "/../kristina/log.php";
+include __DIR__ . "/../kristina/linear.php";*/
+include __DIR__ . "/../kristina/square.php";
 
 final class SquareTest extends TestCase
 {
@@ -28,7 +28,7 @@ final class SquareTest extends TestCase
     }
     /**
     * @dataProvider providerSolveException
-    * @expectedException MyException
+    * @expectedException myexception
     */
     public function testSolveException($a, $b, $c) {
       $inst = new Square();
