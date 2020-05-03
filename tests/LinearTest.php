@@ -28,7 +28,7 @@ final class LinearTest extends TestCase
 
     /**
     * @dataProvider providerLinearSolveException
-    * @expectedException MyException
+    * @expectedException myexception
     */
     public function testLinearSolveException($k, $b) {
       $inst = new Linear();
