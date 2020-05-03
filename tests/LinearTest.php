@@ -5,8 +5,8 @@ use PHPUnit\Framework\TestCase;
 include __DIR__ . "/../core/logabstract.php";
 include __DIR__ . "/../core/loginterface.php";
 include __DIR__ . "/../core/equationinterface.php";
-include __DIR__ . "/../kristina/myexception.php";
-include __DIR__ . "/../ktistina/log.php";
+include __DIR__ . "/../kristina/MyException.php";
+include __DIR__ . "/../ktistina/mylog.php";
 include __DIR__ . "/../ktistina/linear.php";
 
 final class LinearTest extends TestCase
@@ -28,7 +28,7 @@ final class LinearTest extends TestCase
 
     /**
     * @dataProvider providerLinearSolveException
-    * @expectedException myexception
+    * @expectedException MyException
     */
     public function testLinearSolveException($k, $b) {
       $inst = new Linear();
