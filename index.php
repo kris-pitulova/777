@@ -2,22 +2,22 @@
 define("BASEURI", __DIR__);
 date_default_timezone_set("Europe/Moscow");
 
-include BASEURI . "/core/LogAbstract.php";
-include BASEURI . "/core/LogInterface.php";
-include BASEURI . "/core/EquationInterface.php";
-include BASEURI . "/Dadi/MyException.php";
-include BASEURI . "/Dadi/Log.php";
-include BASEURI . "/Dadi/Linear.php";
-include BASEURI . "/Dadi/Square.php";
+include BASEURI . "/core/logabstract.php";
+include BASEURI . "/core/loginterface.php";
+include BASEURI . "/core/equationinterface.php";
+include BASEURI . "/kristina/MyException.php";
+include BASEURI . "/kristina/mylog.php";
+include BASEURI . "/kristina/linear.php";
+include BASEURI . "/kristina/square.php";
 
-use Dadi\Log;
-use Dadi\Square;
-use Dadi\Linear;
-use Dadi\MyException;
+use kristina\Mylog;
+use kristina\square;
+use kristina\linear;
+use kristina\MyException;
 
 
 $version = trim(shell_exec('git symbolic-ref --short -q HEAD'));
-Log::log('Current version: ' . $version);
+MyLog::log('Current version: ' . $version);
 
 echo "Enter koefs a, b, c \n";
 
@@ -30,7 +30,7 @@ $b = $kfArray[1];
 $c = $kfArray[2];
 
 $eq = $a . "x^2 + " . $b . "x + " . $c . " = 0";
-Log::log("Entered equation: " . $eq);
+MyLog::log("Entered equation: " . $eq);
 
 try {
 	$equation = new Square();
@@ -43,8 +43,8 @@ try {
 	}
 
 } catch(MyException $ex) {
-	Log::log($ex->getMessage() . "\n");
+	MyLog::log($ex->getMessage() . "\n");
 }
-Log::write();
+MyLog::write();
 
 ?>
