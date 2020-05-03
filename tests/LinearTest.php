@@ -1,13 +1,13 @@
 <?php
-namespace Dadi;
+namespace kristina;
 
 use PHPUnit\Framework\TestCase;
-include __DIR__ . "/../core/LogAbstract.php";
-include __DIR__ . "/../core/LogInterface.php";
-include __DIR__ . "/../core/EquationInterface.php";
-include __DIR__ . "/../Dadi/MyException.php";
-include __DIR__ . "/../Dadi/Log.php";
-include __DIR__ . "/../Dadi/Linear.php";
+include __DIR__ . "/../core/logabstract.php";
+include __DIR__ . "/../core/loginterface.php";
+include __DIR__ . "/../core/equationinterface.php";
+include __DIR__ . "/../kristina/myexception.php";
+include __DIR__ . "/../ktistina/log.php";
+include __DIR__ . "/../ktistina/linear.php";
 
 final class LinearTest extends TestCase
 {
