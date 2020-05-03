@@ -7,11 +7,11 @@
     "content-hash": "da055d1e090ae065056898bccb0708f4",
     "packages": [
         {
-            "name": "Dadi",
+            "name": "kristina",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/daDnl/MyLib.git",
+                "url": "https://github.com/rok9ru/trpo-core.git",
                 "reference": "cee1f59e76277cd8b8c682a6a8dbed78de88d015"
             },
             "require": {
