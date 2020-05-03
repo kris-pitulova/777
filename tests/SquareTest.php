@@ -5,8 +5,8 @@ use PHPUnit\Framework\TestCase;
 /*include __DIR__ . "/../core/logabstract.php";
 include __DIR__ . "/../core/loginterface.php";
 include __DIR__ . "/../core/equationinterface.php";
-include __DIR__ . "/../kristina/myexception.php";
-include __DIR__ . "/../kristina/log.php";
+include __DIR__ . "/../kristina/MyException.php";
+include __DIR__ . "/../kristina/mylog.php";
 include __DIR__ . "/../kristina/linear.php";*/
 include __DIR__ . "/../kristina/square.php";
 
@@ -28,7 +28,7 @@ final class SquareTest extends TestCase
     }
     /**
     * @dataProvider providerSolveException
-    * @expectedException myexception
+    * @expectedException MyException
     */
     public function testSolveException($a, $b, $c) {
       $inst = new Square();
